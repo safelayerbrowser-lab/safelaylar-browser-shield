@@ -2,18 +2,14 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Shield, Download, Smartphone, Monitor, CheckCircle, ArrowLeft } from "lucide-react";
+import { Shield, Download, Smartphone, Monitor, CheckCircle, ArrowLeft, Chrome, Globe, Apple } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
-
-interface BeforeInstallPromptEvent extends Event {
-  prompt: () => Promise<void>;
-  userChoice: Promise<{ outcome: 'accepted' | 'dismissed' }>;
-}
+import { usePWAInstall } from "@/hooks/usePWAInstall";
+import { motion } from "framer-motion";
 
 const Install = () => {
   const navigate = useNavigate();
-  const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null);
-  const [isInstalled, setIsInstalled] = useState(false);
+  const { isInstalled, isInstallable, isIOS, promptInstall, canPrompt } = usePWAInstall();
   const [deviceType, setDeviceType] = useState<'ios' | 'android' | 'desktop'>('desktop');
 
   useEffect(() => {
@@ -24,27 +20,10 @@ const Install = () => {
     } else if (/android/.test(userAgent)) {
       setDeviceType('android');
     }
-
-    // Check if app is already installed
-    if (window.matchMedia('(display-mode: standalone)').matches) {
-      setIsInstalled(true);
-    }
-
-    // Listen for the beforeinstallprompt event
-    const handleBeforeInstall = (e: Event) => {
-      e.preventDefault();
-      setDeferredPrompt(e as BeforeInstallPromptEvent);
-    };
-
-    window.addEventListener('beforeinstallprompt', handleBeforeInstall);
-
-    return () => {
-      window.removeEventListener('beforeinstallprompt', handleBeforeInstall);
-    };
   }, []);
 
   const handleInstallClick = async () => {
-    if (!deferredPrompt) {
+    if (!canPrompt) {
       toast({
         title: "Installation not available",
         description: "Please follow the manual instructions below for your device.",
@@ -52,15 +31,12 @@ const Install = () => {
       return;
     }
 
-    deferredPrompt.prompt();
-    const { outcome } = await deferredPrompt.userChoice;
-
-    if (outcome === 'accepted') {
+    const result = await promptInstall();
+    if (result.success) {
       toast({
         title: "Installing SafeLaylar",
         description: "The app is being installed to your device.",
       });
-      setDeferredPrompt(null);
     }
   };
 
@@ -128,7 +104,7 @@ const Install = () => {
 
   return (
     <div className="min-h-screen bg-background py-12 px-4">
-      <div className="container max-w-4xl mx-auto">
+      <div className="container max-w-5xl mx-auto">
         <Button 
           onClick={() => navigate("/")} 
           variant="ghost" 
@@ -138,7 +114,11 @@ const Install = () => {
           Back to Home
         </Button>
 
-        <div className="text-center mb-12">
+        <motion.div 
+          className="text-center mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+        >
           <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-primary/10 mb-6">
             <Shield className="w-10 h-10 text-primary" />
           </div>
@@ -148,9 +128,98 @@ const Install = () => {
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Install SafeLaylar on your device for the best experience. Works offline, loads instantly, and feels like a native app.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-6 mb-8">
+        {/* Primary Install CTA */}
+        {canPrompt && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+          >
+            <Card className="bg-gradient-to-r from-primary to-secondary border-0 text-primary-foreground mb-8">
+              <CardContent className="pt-6">
+                <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+                  <div className="flex items-center gap-4">
+                    <Download className="h-10 w-10 flex-shrink-0" />
+                    <div>
+                      <h3 className="font-semibold text-xl mb-1">Quick Install Available</h3>
+                      <p className="text-primary-foreground/90">
+                        One-click install – works on desktop & mobile
+                      </p>
+                    </div>
+                  </div>
+                  <Button 
+                    onClick={handleInstallClick}
+                    size="lg"
+                    className="flex-shrink-0 bg-background text-foreground hover:bg-background/90"
+                  >
+                    <Download className="mr-2 h-5 w-5" />
+                    Install App Now
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          </motion.div>
+        )}
+
+        {/* Browser Extensions */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          className="mb-8"
+        >
+          <h2 className="text-2xl font-bold text-foreground mb-4 text-center">Add to Browser</h2>
+          <div className="grid sm:grid-cols-3 gap-4">
+            <Card className="hover:shadow-elevated transition-shadow cursor-pointer group">
+              <CardContent className="pt-6 text-center">
+                <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
+                  <Chrome className="h-7 w-7 text-primary" />
+                </div>
+                <h3 className="font-semibold mb-1">Chrome / Edge</h3>
+                <p className="text-sm text-muted-foreground mb-3">Full browser protection</p>
+                <Button variant="outline" size="sm" className="w-full">
+                  Add to Chrome
+                </Button>
+              </CardContent>
+            </Card>
+            
+            <Card className="hover:shadow-elevated transition-shadow cursor-pointer group">
+              <CardContent className="pt-6 text-center">
+                <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
+                  <Globe className="h-7 w-7 text-primary" />
+                </div>
+                <h3 className="font-semibold mb-1">Firefox</h3>
+                <p className="text-sm text-muted-foreground mb-3">Browser extension</p>
+                <Button variant="outline" size="sm" className="w-full">
+                  Add to Firefox
+                </Button>
+              </CardContent>
+            </Card>
+            
+            <Card className="hover:shadow-elevated transition-shadow cursor-pointer group">
+              <CardContent className="pt-6 text-center">
+                <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
+                  <Apple className="h-7 w-7 text-primary" />
+                </div>
+                <h3 className="font-semibold mb-1">Safari</h3>
+                <p className="text-sm text-muted-foreground mb-3">iOS 16.4+ & macOS</p>
+                <Button variant="outline" size="sm" className="w-full">
+                  Add to Safari
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </motion.div>
+
+        {/* Device-specific instructions */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3 }}
+          className="grid md:grid-cols-2 gap-6 mb-8"
+        >
           <Card>
             <CardHeader>
               <div className="flex items-center gap-3 mb-2">
@@ -198,47 +267,26 @@ const Install = () => {
               </ul>
             </CardContent>
           </Card>
-        </div>
+        </motion.div>
 
-        {deferredPrompt && (
-          <Card className="bg-gradient-primary border-0 text-white">
-            <CardContent className="pt-6">
-              <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-                <div className="flex items-center gap-4">
-                  <Download className="h-8 w-8 flex-shrink-0" />
-                  <div>
-                    <h3 className="font-semibold text-lg mb-1">Quick Install Available</h3>
-                    <p className="text-white/90 text-sm">
-                      Click below to install SafeLaylar with one click
-                    </p>
-                  </div>
-                </div>
-                <Button 
-                  onClick={handleInstallClick}
-                  size="lg"
-                  variant="secondary"
-                  className="flex-shrink-0"
-                >
-                  <Download className="mr-2 h-5 w-5" />
-                  Install Now
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
-        )}
-
-        <div className="mt-12 text-center">
-          <h2 className="text-2xl font-bold text-foreground mb-4">
+        {/* Why Install */}
+        <motion.div 
+          className="text-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4 }}
+        >
+          <h2 className="text-2xl font-bold text-foreground mb-6">
             Why Install SafeLaylar?
           </h2>
-          <div className="grid sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
+          <div className="grid sm:grid-cols-4 gap-6 max-w-4xl mx-auto">
             <div className="text-center">
               <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-3">
                 <Shield className="h-6 w-6 text-primary" />
               </div>
               <h3 className="font-semibold mb-2">Always Protected</h3>
               <p className="text-sm text-muted-foreground">
-                Quick access to your safety dashboard anytime
+                Quick access to your safety dashboard
               </p>
             </div>
             <div className="text-center">
@@ -247,7 +295,7 @@ const Install = () => {
               </div>
               <h3 className="font-semibold mb-2">Works Offline</h3>
               <p className="text-sm text-muted-foreground">
-                Access your safety features even without internet
+                Access features without internet
               </p>
             </div>
             <div className="text-center">
@@ -256,11 +304,20 @@ const Install = () => {
               </div>
               <h3 className="font-semibold mb-2">Native Feel</h3>
               <p className="text-sm text-muted-foreground">
-                Feels like a real app with instant loading
+                Feels like a real app
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-3">
+                <CheckCircle className="h-6 w-6 text-primary" />
+              </div>
+              <h3 className="font-semibold mb-2">Auto Updates</h3>
+              <p className="text-sm text-muted-foreground">
+                Always up-to-date protection
               </p>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

@@ -5,17 +5,21 @@ import HowItWorks from "@/components/HowItWorks";
 import Download from "@/components/Download";
 import Footer from "@/components/Footer";
 import SafetyChatbot from "@/components/SafetyChatbot";
+import ImpactGallery from "@/components/ImpactGallery";
+import InstallBanner from "@/components/InstallBanner";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Hero />
       <Features />
+      <ImpactGallery />
       <InteractiveDemo />
       <HowItWorks />
       <Download />
       <Footer />
       <SafetyChatbot />
+      <InstallBanner />
     </div>
   );
 };
