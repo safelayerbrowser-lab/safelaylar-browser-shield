@@ -463,9 +463,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-- **Documentation**: [docs.safelaylar.com](https://docs.safelaylar.com)
-- **Email**: support@safelaylar.com
-- **Community**: Join our Discord
+- **Email**: safelayerbrowser@gmail.com
+
 
 ---
 
