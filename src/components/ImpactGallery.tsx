@@ -14,11 +14,6 @@ const images = [
     alt: "Children holding signs promoting childhood safety and protection from exploitation",
     caption: "Every child deserves a safe childhood online"
   },
-  {
-    src: digitalRightsAdvocacy,
-    alt: "Advocate promoting digital space protection and innovation",
-    caption: "Protecting our digital spaces together"
-  }
 ];
 
 const ImpactGallery = () => {
@@ -39,7 +34,7 @@ const ImpactGallery = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 gap-6">
           {images.map((image, index) => (
             <motion.div
               key={index}
