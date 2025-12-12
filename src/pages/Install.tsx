@@ -69,35 +69,61 @@ const Install = () => {
 
   if (isInstalled) {
     return (
-      <div className="min-h-screen bg-gradient-hero flex items-center justify-center p-4">
-        <Card className="max-w-lg w-full">
-          <CardHeader className="text-center">
-            <div className="mx-auto w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
-              <CheckCircle className="w-8 h-8 text-primary" />
-            </div>
-            <CardTitle className="text-2xl">SafeLaylar is Installed!</CardTitle>
-            <CardDescription>
-              You're all set. SafeLaylar is protecting you.
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <Button 
-              onClick={() => navigate("/dashboard")} 
-              className="w-full"
-              size="lg"
-            >
-              Open Dashboard
-            </Button>
-            <Button 
-              onClick={() => navigate("/")} 
-              variant="outline" 
-              className="w-full"
-            >
-              <ArrowLeft className="mr-2 h-4 w-4" />
-              Back to Home
-            </Button>
-          </CardContent>
-        </Card>
+      <div className="min-h-screen bg-gradient-to-b from-background to-muted/30 flex items-center justify-center p-4">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+        >
+          <Card className="max-w-lg w-full">
+            <CardHeader className="text-center">
+              <motion.div 
+                className="mx-auto w-20 h-20 bg-success/10 rounded-full flex items-center justify-center mb-4"
+                animate={{ scale: [1, 1.05, 1] }}
+                transition={{ duration: 2, repeat: Infinity }}
+              >
+                <CheckCircle className="w-10 h-10 text-success" />
+              </motion.div>
+              <CardTitle className="text-2xl">SafeLaylar is Active!</CardTitle>
+              <CardDescription>
+                Real-time protection is now enabled on your device.
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div className="bg-success/10 rounded-xl p-4 border border-success/20">
+                <div className="flex items-center gap-3">
+                  <Shield className="w-5 h-5 text-success" />
+                  <div>
+                    <p className="font-medium text-success">All Protection Enabled</p>
+                    <p className="text-sm text-muted-foreground">6 active shields protecting you</p>
+                  </div>
+                </div>
+              </div>
+              <Button 
+                onClick={() => navigate("/protection")} 
+                className="w-full bg-gradient-to-r from-primary to-secondary"
+                size="lg"
+              >
+                <Shield className="mr-2 h-4 w-4" />
+                Open Protection Dashboard
+              </Button>
+              <Button 
+                onClick={() => navigate("/dashboard")} 
+                variant="outline" 
+                className="w-full"
+              >
+                Go to Full Dashboard
+              </Button>
+              <Button 
+                onClick={() => navigate("/")} 
+                variant="ghost" 
+                className="w-full"
+              >
+                <ArrowLeft className="mr-2 h-4 w-4" />
+                Back to Home
+              </Button>
+            </CardContent>
+          </Card>
+        </motion.div>
       </div>
     );
   }

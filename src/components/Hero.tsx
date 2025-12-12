@@ -127,6 +127,15 @@ const Hero = () => {
               <Globe className="mr-2 h-4 w-4" />
               Add to Firefox
             </Button>
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => navigate("/protection")}
+              className="text-muted-foreground hover:text-foreground"
+            >
+              <Download className="mr-2 h-4 w-4" />
+              Try Scanner
+            </Button>
           </motion.div>
 
           {/* Trust indicators */}

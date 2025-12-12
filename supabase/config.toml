@@ -5,3 +5,6 @@ verify_jwt = true
 
 [functions.safety-chat]
 verify_jwt = false
+
+[functions.threat-detection]
+verify_jwt = false
