@@ -1,7 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Shield, ArrowRight, Play, ChevronDown } from "lucide-react";
+import { Shield, ArrowRight, Download, ChevronDown, Chrome, Globe } from "lucide-react";
 import { motion } from "framer-motion";
+import InstallButton from "@/components/InstallButton";
 
 const Hero = () => {
   const navigate = useNavigate();
@@ -81,7 +82,7 @@ const Hero = () => {
           </motion.p>
           
           <motion.div 
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.6 }}
@@ -94,14 +95,37 @@ const Hero = () => {
               Get started free
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
-            <Button 
-              size="lg" 
+            <InstallButton 
+              variant="outline" 
+              size="lg"
+              className="text-base px-8 py-6 rounded-full"
+            />
+          </motion.div>
+
+          {/* Add to Browser buttons */}
+          <motion.div
+            className="flex flex-wrap items-center justify-center gap-3"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.6 }}
+          >
+            <Button
               variant="ghost"
+              size="sm"
               onClick={() => navigate("/install")}
-              className="text-base px-8 py-6 rounded-full group"
+              className="text-muted-foreground hover:text-foreground"
             >
-              <Play className="mr-2 h-4 w-4 group-hover:text-primary transition-colors" />
-              See how it works
+              <Chrome className="mr-2 h-4 w-4" />
+              Add to Chrome
+            </Button>
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => navigate("/install")}
+              className="text-muted-foreground hover:text-foreground"
+            >
+              <Globe className="mr-2 h-4 w-4" />
+              Add to Firefox
             </Button>
           </motion.div>
 
