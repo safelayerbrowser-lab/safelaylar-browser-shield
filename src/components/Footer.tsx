@@ -51,15 +51,21 @@ const Footer = () => {
               <h4 className="font-semibold text-foreground mb-4">Support</h4>
               <ul className="space-y-3">
                 {[
-                  { label: "Help Center", href: "#" },
-                  { label: "Safety Tips", href: "#" },
-                  { label: "Privacy Policy", href: "#" },
-                  { label: "Contact", href: "#" },
+                  { label: "Help Center", href: "/help", isRouter: true },
+                  { label: "Safety Tips", href: "/safety-tips", isRouter: true },
+                  { label: "Privacy Policy", href: "/privacy", isRouter: true },
+                  { label: "Contact", href: "/contact", isRouter: true },
                 ].map((link, i) => (
                   <li key={i}>
-                    <a href={link.href} className="text-muted-foreground hover:text-primary transition-colors text-sm">
-                      {link.label}
-                    </a>
+                    {link.isRouter ? (
+                      <Link to={link.href} className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                        {link.label}
+                      </Link>
+                    ) : (
+                      <a href={link.href} className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                        {link.label}
+                      </a>
+                    )}
                   </li>
                 ))}
               </ul>
