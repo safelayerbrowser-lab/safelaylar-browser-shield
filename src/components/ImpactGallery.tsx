@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import communityWorkshop from "@/assets/community-workshop.jpg";
 import childSafetyAdvocacy from "@/assets/child-safety-advocacy.jpg";
-import digitalRightsAdvocacy from "@/assets/digital-rights-advocacy.jpg";
+import digitalRightsWorkshop from "@/assets/digital-rights-workshop.jpg";
 
 const images = [
   {
@@ -13,6 +13,11 @@ const images = [
     src: childSafetyAdvocacy,
     alt: "Children holding signs promoting childhood safety and protection from exploitation",
     caption: "Every child deserves a safe childhood online"
+  },
+  {
+    src: digitalRightsWorkshop,
+    alt: "Digital rights and online safety workshop in a classroom setting",
+    caption: "Educating youth on digital rights and online safety"
   },
 ];
 
@@ -34,7 +39,7 @@ const ImpactGallery = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-3 gap-6">
           {images.map((image, index) => (
             <motion.div
               key={index}

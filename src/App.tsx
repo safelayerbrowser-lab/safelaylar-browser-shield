@@ -8,6 +8,10 @@ import Auth from "./pages/Auth";
 import DashboardPage from "./pages/DashboardPage";
 import Install from "./pages/Install";
 import Protection from "./pages/Protection";
+import HelpCenter from "./pages/HelpCenter";
+import SafetyTips from "./pages/SafetyTips";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -24,6 +28,10 @@ const App = () => (
           <Route path="/dashboard" element={<DashboardPage />} />
           <Route path="/install" element={<Install />} />
           <Route path="/protection" element={<Protection />} />
+          <Route path="/help" element={<HelpCenter />} />
+          <Route path="/safety-tips" element={<SafetyTips />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
+          <Route path="/contact" element={<Contact />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
