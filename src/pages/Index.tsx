@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import SafetyChatbot from "@/components/SafetyChatbot";
 import ImpactGallery from "@/components/ImpactGallery";
 import InstallBanner from "@/components/InstallBanner";
+import Testimonials from "@/components/Testimonials";
 
 const Index = () => {
   return (
@@ -14,6 +15,7 @@ const Index = () => {
       <Hero />
       <Features />
       <ImpactGallery />
+      <Testimonials />
       <InteractiveDemo />
       <HowItWorks />
       <Download />

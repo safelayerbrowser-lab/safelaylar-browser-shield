@@ -29,7 +29,7 @@ const Footer = () => {
                   { label: "Features", href: "#features" },
                   { label: "Download", href: "/install", isRouter: true },
                   { label: "Dashboard", href: "/dashboard", isRouter: true },
-                  { label: "Pricing", href: "#" },
+                  { label: "About Us", href: "/about", isRouter: true },
                 ].map((link, i) => (
                   <li key={i}>
                     {link.isRouter ? (
@@ -78,9 +78,9 @@ const Footer = () => {
               © 2025 SafeLaylar. All rights reserved.
             </p>
             <div className="flex items-center gap-6 text-sm text-muted-foreground">
-              <a href="#" className="hover:text-primary transition-colors">Terms</a>
-              <a href="#" className="hover:text-primary transition-colors">Privacy</a>
-              <a href="#" className="hover:text-primary transition-colors">Cookies</a>
+              <Link to="/terms" className="hover:text-primary transition-colors">Terms</Link>
+              <Link to="/privacy" className="hover:text-primary transition-colors">Privacy</Link>
+              <Link to="/about" className="hover:text-primary transition-colors">About</Link>
             </div>
           </div>
         </div>
