@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { Shield, ArrowRight, Download, ChevronDown, Chrome, Globe } from "lucide-react";
 import { motion } from "framer-motion";
@@ -6,6 +7,7 @@ import InstallButton from "@/components/InstallButton";
 
 const Hero = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const scrollToFeatures = () => {
     document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' });
@@ -39,7 +41,7 @@ const Hero = () => {
       </div>
 
       {/* Subtle grid */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:80px_80px]" />
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:80px_80px] dark:bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)]" />
       
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <motion.div 
@@ -64,10 +66,10 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.6 }}
           >
-            Browse safely.
+            {t('hero.title1')}
             <br />
             <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
-              Stay protected.
+              {t('hero.title2')}
             </span>
           </motion.h1>
           
@@ -77,8 +79,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
           >
-            AI-powered protection from toxic content, scams, and digital threats. 
-            One shield for your entire digital life.
+            {t('hero.subtitle')}
           </motion.p>
           
           <motion.div 
@@ -92,7 +93,7 @@ const Hero = () => {
               onClick={() => navigate("/auth")}
               className="text-base px-8 py-6 bg-foreground text-background hover:bg-foreground/90 rounded-full shadow-lg hover:shadow-xl transition-all"
             >
-              Get started free
+              {t('common.getStarted')}
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
             <InstallButton 
@@ -116,7 +117,7 @@ const Hero = () => {
               className="text-muted-foreground hover:text-foreground"
             >
               <Chrome className="mr-2 h-4 w-4" />
-              Add to Chrome
+              {t('hero.addToChrome')}
             </Button>
             <Button
               variant="ghost"
@@ -125,7 +126,7 @@ const Hero = () => {
               className="text-muted-foreground hover:text-foreground"
             >
               <Globe className="mr-2 h-4 w-4" />
-              Add to Firefox
+              {t('hero.addToFirefox')}
             </Button>
             <Button
               variant="ghost"
@@ -134,7 +135,7 @@ const Hero = () => {
               className="text-muted-foreground hover:text-foreground"
             >
               <Download className="mr-2 h-4 w-4" />
-              Try Scanner
+              {t('hero.tryScanner')}
             </Button>
           </motion.div>
 
@@ -147,15 +148,15 @@ const Hero = () => {
           >
             <div className="flex items-center gap-2 text-sm">
               <div className="w-2 h-2 rounded-full bg-success animate-pulse" />
-              <span>Real-time protection</span>
+              <span>{t('hero.realTimeProtection')}</span>
             </div>
             <div className="flex items-center gap-2 text-sm">
               <div className="w-2 h-2 rounded-full bg-primary" />
-              <span>Privacy first</span>
+              <span>{t('hero.privacyFirst')}</span>
             </div>
             <div className="flex items-center gap-2 text-sm">
               <div className="w-2 h-2 rounded-full bg-secondary" />
-              <span>Works everywhere</span>
+              <span>{t('hero.worksEverywhere')}</span>
             </div>
           </motion.div>
         </motion.div>
@@ -168,7 +169,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1, duration: 0.6 }}
         >
-          <span className="text-xs uppercase tracking-widest">Explore</span>
+          <span className="text-xs uppercase tracking-widest">{t('hero.explore')}</span>
           <motion.div
             animate={{ y: [0, 6, 0] }}
             transition={{ duration: 1.5, repeat: Infinity }}
