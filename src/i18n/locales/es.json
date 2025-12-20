@@ -1,0 +1,113 @@
+{
+  "common": {
+    "getStarted": "Comenzar gratis",
+    "learnMore": "Saber más",
+    "download": "Descargar",
+    "install": "Instalar",
+    "signIn": "Iniciar sesión",
+    "signUp": "Registrarse",
+    "submit": "Enviar",
+    "cancel": "Cancelar",
+    "save": "Guardar",
+    "loading": "Cargando...",
+    "error": "Error",
+    "success": "Éxito"
+  },
+  "nav": {
+    "features": "Características",
+    "download": "Descargar",
+    "dashboard": "Panel",
+    "about": "Sobre nosotros",
+    "help": "Centro de ayuda",
+    "safetyTips": "Consejos de seguridad",
+    "privacy": "Política de privacidad",
+    "contact": "Contacto",
+    "terms": "Términos"
+  },
+  "hero": {
+    "title1": "Navega seguro.",
+    "title2": "Mantente protegido.",
+    "subtitle": "Protección impulsada por IA contra contenido tóxico, estafas y amenazas digitales. Un escudo para toda tu vida digital.",
+    "addToChrome": "Añadir a Chrome",
+    "addToFirefox": "Añadir a Firefox",
+    "tryScanner": "Probar escáner",
+    "realTimeProtection": "Protección en tiempo real",
+    "privacyFirst": "Privacidad primero",
+    "worksEverywhere": "Funciona en todas partes",
+    "explore": "Explorar"
+  },
+  "features": {
+    "title": "Protección Integral",
+    "subtitle": "Funciones avanzadas impulsadas por IA diseñadas para mantenerte seguro en todas tus interacciones digitales.",
+    "antiGrooming": {
+      "title": "Detección Anti-Grooming",
+      "description": "La IA identifica patrones de comportamiento depredador en conversaciones para proteger a usuarios vulnerables."
+    },
+    "romanceScam": {
+      "title": "Alertas de Estafas Románticas",
+      "description": "Detecta tácticas de manipulación y señales de alerta en plataformas de citas y redes sociales."
+    },
+    "deepfake": {
+      "title": "Detección de Deepfakes",
+      "description": "Identifica imágenes y videos falsos generados por IA para prevenir la desinformación."
+    },
+    "toxicContent": {
+      "title": "Filtro de Contenido Tóxico",
+      "description": "Bloquea contenido dañino, abusivo y ofensivo en redes sociales y sitios web."
+    },
+    "spyware": {
+      "title": "Protección contra Spyware",
+      "description": "Detecta y bloquea software de rastreo malicioso y aplicaciones invasivas de privacidad."
+    },
+    "phishing": {
+      "title": "Protección contra Phishing",
+      "description": "Detección en tiempo real de sitios web fraudulentos y enlaces sospechosos."
+    }
+  },
+  "testimonials": {
+    "title": "Lo Que Dicen Nuestros Usuarios",
+    "subtitle": "Historias reales de personas protegidas por SafeLaylar",
+    "shareTitle": "Comparte Tu Historia",
+    "shareSubtitle": "Ayuda a otros compartiendo cómo SafeLaylar te ha protegido en línea.",
+    "namePlaceholder": "Tu nombre",
+    "rolePlaceholder": "Tu rol (ej., Estudiante, Padre)",
+    "reviewPlaceholder": "Comparte tu experiencia con SafeLaylar...",
+    "ratingLabel": "Tu Calificación",
+    "submitReview": "Enviar Reseña"
+  },
+  "faq": {
+    "title": "Preguntas Frecuentes",
+    "subtitle": "Encuentra respuestas a preguntas comunes sobre SafeLaylar, seguridad en línea y cómo te protegemos de amenazas digitales.",
+    "stillHaveQuestions": "¿Aún tienes preguntas? ¡Estamos aquí para ayudar!",
+    "contactSupport": "Contacta a nuestro equipo de soporte"
+  },
+  "footer": {
+    "description": "Protección impulsada por IA para una vida digital más segura. Construido con privacidad en mente, diseñado para todos.",
+    "product": "Producto",
+    "support": "Soporte",
+    "shareMessage": "Ayuda a difundir la conciencia sobre seguridad digital - comparte SafeLaylar con otros",
+    "copyright": "© 2025 SafeLaylar. Todos los derechos reservados."
+  },
+  "about": {
+    "title": "Sobre SafeLaylar",
+    "missionTitle": "Nuestra Misión",
+    "missionText": "Crear un mundo digital más seguro protegiendo a los usuarios de la Violencia de Género Facilitada por la Tecnología (VGFT) a través de soluciones innovadoras de IA.",
+    "teamTitle": "Conoce a Nuestro Equipo",
+    "teamSubtitle": "Las personas apasionadas detrás de SafeLaylar"
+  },
+  "contact": {
+    "title": "Contáctanos",
+    "subtitle": "¿Tienes preguntas? Nos encantaría saber de ti.",
+    "namePlaceholder": "Tu nombre",
+    "emailPlaceholder": "Tu correo electrónico",
+    "messagePlaceholder": "Tu mensaje",
+    "send": "Enviar Mensaje"
+  },
+  "settings": {
+    "theme": "Tema",
+    "language": "Idioma",
+    "lightMode": "Claro",
+    "darkMode": "Oscuro",
+    "systemMode": "Sistema"
+  }
+}

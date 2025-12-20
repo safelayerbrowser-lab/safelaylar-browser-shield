@@ -1,0 +1,113 @@
+{
+  "common": {
+    "getStarted": "Get started free",
+    "learnMore": "Learn more",
+    "download": "Download",
+    "install": "Install",
+    "signIn": "Sign In",
+    "signUp": "Sign Up",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "save": "Save",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success"
+  },
+  "nav": {
+    "features": "Features",
+    "download": "Download",
+    "dashboard": "Dashboard",
+    "about": "About Us",
+    "help": "Help Center",
+    "safetyTips": "Safety Tips",
+    "privacy": "Privacy Policy",
+    "contact": "Contact",
+    "terms": "Terms"
+  },
+  "hero": {
+    "title1": "Browse safely.",
+    "title2": "Stay protected.",
+    "subtitle": "AI-powered protection from toxic content, scams, and digital threats. One shield for your entire digital life.",
+    "addToChrome": "Add to Chrome",
+    "addToFirefox": "Add to Firefox",
+    "tryScanner": "Try Scanner",
+    "realTimeProtection": "Real-time protection",
+    "privacyFirst": "Privacy first",
+    "worksEverywhere": "Works everywhere",
+    "explore": "Explore"
+  },
+  "features": {
+    "title": "Comprehensive Protection",
+    "subtitle": "Advanced AI-powered features designed to keep you safe across all your digital interactions.",
+    "antiGrooming": {
+      "title": "Anti-Grooming Detection",
+      "description": "AI identifies predatory behavior patterns in conversations to protect vulnerable users."
+    },
+    "romanceScam": {
+      "title": "Romance Scam Alerts",
+      "description": "Detects manipulation tactics and red flags in online dating and social platforms."
+    },
+    "deepfake": {
+      "title": "Deepfake Detection",
+      "description": "Identifies AI-generated fake images and videos to prevent misinformation."
+    },
+    "toxicContent": {
+      "title": "Toxic Content Filter",
+      "description": "Blocks harmful, abusive, and offensive content across social media and websites."
+    },
+    "spyware": {
+      "title": "Spyware Protection",
+      "description": "Detects and blocks malicious tracking software and privacy-invading applications."
+    },
+    "phishing": {
+      "title": "Phishing Protection",
+      "description": "Real-time detection of fraudulent websites and suspicious links."
+    }
+  },
+  "testimonials": {
+    "title": "What Our Users Say",
+    "subtitle": "Real stories from people protected by SafeLaylar",
+    "shareTitle": "Share Your Story",
+    "shareSubtitle": "Help others by sharing how SafeLaylar has helped protect you online.",
+    "namePlaceholder": "Your name",
+    "rolePlaceholder": "Your role (e.g., Student, Parent)",
+    "reviewPlaceholder": "Share your experience with SafeLaylar...",
+    "ratingLabel": "Your Rating",
+    "submitReview": "Submit Review"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Find answers to common questions about SafeLaylar, online safety, and how we protect you from digital threats.",
+    "stillHaveQuestions": "Still have questions? We're here to help!",
+    "contactSupport": "Contact our support team"
+  },
+  "footer": {
+    "description": "AI-powered protection for a safer digital life. Built with privacy in mind, designed for everyone.",
+    "product": "Product",
+    "support": "Support",
+    "shareMessage": "Help spread digital safety awareness - share SafeLaylar with others",
+    "copyright": "© 2025 SafeLaylar. All rights reserved."
+  },
+  "about": {
+    "title": "About SafeLaylar",
+    "missionTitle": "Our Mission",
+    "missionText": "To create a safer digital world by protecting users from Technology-Facilitated Gender-Based Violence (TFGBV) through innovative AI solutions.",
+    "teamTitle": "Meet Our Team",
+    "teamSubtitle": "The passionate individuals behind SafeLaylar"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Have questions? We'd love to hear from you.",
+    "namePlaceholder": "Your name",
+    "emailPlaceholder": "Your email",
+    "messagePlaceholder": "Your message",
+    "send": "Send Message"
+  },
+  "settings": {
+    "theme": "Theme",
+    "language": "Language",
+    "lightMode": "Light",
+    "darkMode": "Dark",
+    "systemMode": "System"
+  }
+}

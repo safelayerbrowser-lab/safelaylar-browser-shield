@@ -1,5 +1,6 @@
 import { Shield, Twitter, Facebook, Instagram, Linkedin, Youtube, Github } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import SocialShare from "./SocialShare";
 
 const socialLinks = [
@@ -12,22 +13,23 @@ const socialLinks = [
 ];
 
 const Footer = () => {
+  const { t } = useTranslation();
+
   return (
-    <footer className="py-16 bg-muted/30 border-t border-border/50">
+    <footer className="py-16 bg-muted/30 border-t border-border/50 transition-colors duration-300">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
             {/* Brand */}
             <div className="md:col-span-2">
               <div className="flex items-center gap-2 mb-4">
-                <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
+                <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center transition-colors duration-300">
                   <Shield className="w-5 h-5 text-primary-foreground" />
                 </div>
                 <span className="text-xl font-bold text-foreground">SafeLaylar</span>
               </div>
               <p className="text-muted-foreground text-sm max-w-sm leading-relaxed mb-6">
-                AI-powered protection for a safer digital life. Built with privacy in mind, 
-                designed for everyone.
+                {t('footer.description')}
               </p>
               
               {/* Social Links */}
@@ -38,7 +40,7 @@ const Footer = () => {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`w-9 h-9 rounded-full bg-background border border-border/50 flex items-center justify-center text-muted-foreground transition-colors ${social.color}`}
+                    className={`w-9 h-9 rounded-full bg-background border border-border/50 flex items-center justify-center text-muted-foreground transition-all duration-300 ${social.color}`}
                     aria-label={`Follow us on ${social.name}`}
                   >
                     <social.icon className="w-4 h-4" />
@@ -49,13 +51,13 @@ const Footer = () => {
             
             {/* Product links */}
             <div>
-              <h4 className="font-semibold text-foreground mb-4">Product</h4>
+              <h4 className="font-semibold text-foreground mb-4">{t('footer.product')}</h4>
               <ul className="space-y-3">
                 {[
-                  { label: "Features", href: "#features" },
-                  { label: "Download", href: "/install", isRouter: true },
-                  { label: "Dashboard", href: "/dashboard", isRouter: true },
-                  { label: "About Us", href: "/about", isRouter: true },
+                  { label: t('nav.features'), href: "#features" },
+                  { label: t('nav.download'), href: "/install", isRouter: true },
+                  { label: t('nav.dashboard'), href: "/dashboard", isRouter: true },
+                  { label: t('nav.about'), href: "/about", isRouter: true },
                 ].map((link, i) => (
                   <li key={i}>
                     {link.isRouter ? (
@@ -74,13 +76,13 @@ const Footer = () => {
             
             {/* Support links */}
             <div>
-              <h4 className="font-semibold text-foreground mb-4">Support</h4>
+              <h4 className="font-semibold text-foreground mb-4">{t('footer.support')}</h4>
               <ul className="space-y-3">
                 {[
-                  { label: "Help Center", href: "/help", isRouter: true },
-                  { label: "Safety Tips", href: "/safety-tips", isRouter: true },
-                  { label: "Privacy Policy", href: "/privacy", isRouter: true },
-                  { label: "Contact", href: "/contact", isRouter: true },
+                  { label: t('nav.help'), href: "/help", isRouter: true },
+                  { label: t('nav.safetyTips'), href: "/safety-tips", isRouter: true },
+                  { label: t('nav.privacy'), href: "/privacy", isRouter: true },
+                  { label: t('nav.contact'), href: "/contact", isRouter: true },
                 ].map((link, i) => (
                   <li key={i}>
                     {link.isRouter ? (
@@ -102,7 +104,7 @@ const Footer = () => {
           <div className="py-6 border-t border-b border-border/50 mb-8">
             <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
               <p className="text-sm text-muted-foreground">
-                Help spread digital safety awareness - share SafeLaylar with others
+                {t('footer.shareMessage')}
               </p>
               <SocialShare title="SafeLaylar - AI-Powered Digital Safety Protection" />
             </div>
@@ -111,12 +113,12 @@ const Footer = () => {
           {/* Bottom */}
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-muted-foreground text-sm">
-              © 2025 SafeLaylar. All rights reserved.
+              {t('footer.copyright')}
             </p>
             <div className="flex items-center gap-6 text-sm text-muted-foreground">
-              <Link to="/terms" className="hover:text-primary transition-colors">Terms</Link>
-              <Link to="/privacy" className="hover:text-primary transition-colors">Privacy</Link>
-              <Link to="/about" className="hover:text-primary transition-colors">About</Link>
+              <Link to="/terms" className="hover:text-primary transition-colors">{t('nav.terms')}</Link>
+              <Link to="/privacy" className="hover:text-primary transition-colors">{t('nav.privacy')}</Link>
+              <Link to="/about" className="hover:text-primary transition-colors">{t('nav.about')}</Link>
             </div>
           </div>
         </div>

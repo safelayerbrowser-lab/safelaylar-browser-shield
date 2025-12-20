@@ -1,0 +1,113 @@
+{
+  "common": {
+    "getStarted": "Commencer gratuitement",
+    "learnMore": "En savoir plus",
+    "download": "Télécharger",
+    "install": "Installer",
+    "signIn": "Se connecter",
+    "signUp": "S'inscrire",
+    "submit": "Soumettre",
+    "cancel": "Annuler",
+    "save": "Sauvegarder",
+    "loading": "Chargement...",
+    "error": "Erreur",
+    "success": "Succès"
+  },
+  "nav": {
+    "features": "Fonctionnalités",
+    "download": "Télécharger",
+    "dashboard": "Tableau de bord",
+    "about": "À propos",
+    "help": "Centre d'aide",
+    "safetyTips": "Conseils de sécurité",
+    "privacy": "Politique de confidentialité",
+    "contact": "Contact",
+    "terms": "Conditions"
+  },
+  "hero": {
+    "title1": "Naviguez en sécurité.",
+    "title2": "Restez protégé.",
+    "subtitle": "Protection alimentée par l'IA contre les contenus toxiques, les arnaques et les menaces numériques. Un bouclier pour toute votre vie numérique.",
+    "addToChrome": "Ajouter à Chrome",
+    "addToFirefox": "Ajouter à Firefox",
+    "tryScanner": "Essayer le scanner",
+    "realTimeProtection": "Protection en temps réel",
+    "privacyFirst": "Confidentialité d'abord",
+    "worksEverywhere": "Fonctionne partout",
+    "explore": "Explorer"
+  },
+  "features": {
+    "title": "Protection Complète",
+    "subtitle": "Fonctionnalités avancées alimentées par l'IA conçues pour vous protéger dans toutes vos interactions numériques.",
+    "antiGrooming": {
+      "title": "Détection Anti-Grooming",
+      "description": "L'IA identifie les schémas de comportement prédateur dans les conversations pour protéger les utilisateurs vulnérables."
+    },
+    "romanceScam": {
+      "title": "Alertes Arnaque Sentimentale",
+      "description": "Détecte les tactiques de manipulation et les signaux d'alerte sur les plateformes de rencontres et réseaux sociaux."
+    },
+    "deepfake": {
+      "title": "Détection de Deepfakes",
+      "description": "Identifie les images et vidéos fausses générées par l'IA pour prévenir la désinformation."
+    },
+    "toxicContent": {
+      "title": "Filtre de Contenu Toxique",
+      "description": "Bloque les contenus nuisibles, abusifs et offensants sur les réseaux sociaux et sites web."
+    },
+    "spyware": {
+      "title": "Protection Anti-Spyware",
+      "description": "Détecte et bloque les logiciels de suivi malveillants et les applications invasives."
+    },
+    "phishing": {
+      "title": "Protection Anti-Phishing",
+      "description": "Détection en temps réel des sites web frauduleux et des liens suspects."
+    }
+  },
+  "testimonials": {
+    "title": "Ce Que Disent Nos Utilisateurs",
+    "subtitle": "Histoires vraies de personnes protégées par SafeLaylar",
+    "shareTitle": "Partagez Votre Histoire",
+    "shareSubtitle": "Aidez les autres en partageant comment SafeLaylar vous a protégé en ligne.",
+    "namePlaceholder": "Votre nom",
+    "rolePlaceholder": "Votre rôle (ex., Étudiant, Parent)",
+    "reviewPlaceholder": "Partagez votre expérience avec SafeLaylar...",
+    "ratingLabel": "Votre Note",
+    "submitReview": "Soumettre l'avis"
+  },
+  "faq": {
+    "title": "Questions Fréquentes",
+    "subtitle": "Trouvez des réponses aux questions courantes sur SafeLaylar, la sécurité en ligne et comment nous vous protégeons des menaces numériques.",
+    "stillHaveQuestions": "Vous avez encore des questions? Nous sommes là pour vous aider!",
+    "contactSupport": "Contactez notre équipe de support"
+  },
+  "footer": {
+    "description": "Protection alimentée par l'IA pour une vie numérique plus sûre. Conçu avec la confidentialité à l'esprit, pour tous.",
+    "product": "Produit",
+    "support": "Support",
+    "shareMessage": "Aidez à sensibiliser à la sécurité numérique - partagez SafeLaylar",
+    "copyright": "© 2025 SafeLaylar. Tous droits réservés."
+  },
+  "about": {
+    "title": "À Propos de SafeLaylar",
+    "missionTitle": "Notre Mission",
+    "missionText": "Créer un monde numérique plus sûr en protégeant les utilisateurs contre la Violence de Genre Facilitée par la Technologie (VGFT) grâce à des solutions d'IA innovantes.",
+    "teamTitle": "Rencontrez Notre Équipe",
+    "teamSubtitle": "Les personnes passionnées derrière SafeLaylar"
+  },
+  "contact": {
+    "title": "Contactez-nous",
+    "subtitle": "Des questions? Nous aimerions avoir de vos nouvelles.",
+    "namePlaceholder": "Votre nom",
+    "emailPlaceholder": "Votre email",
+    "messagePlaceholder": "Votre message",
+    "send": "Envoyer le Message"
+  },
+  "settings": {
+    "theme": "Thème",
+    "language": "Langue",
+    "lightMode": "Clair",
+    "darkMode": "Sombre",
+    "systemMode": "Système"
+  }
+}
