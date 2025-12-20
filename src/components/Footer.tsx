@@ -1,5 +1,15 @@
-import { Shield } from "lucide-react";
+import { Shield, Twitter, Facebook, Instagram, Linkedin, Youtube, Github } from "lucide-react";
 import { Link } from "react-router-dom";
+import SocialShare from "./SocialShare";
+
+const socialLinks = [
+  { name: "Twitter", icon: Twitter, href: "https://twitter.com/safelaylar", color: "hover:text-[#1DA1F2]" },
+  { name: "Facebook", icon: Facebook, href: "https://facebook.com/safelaylar", color: "hover:text-[#4267B2]" },
+  { name: "Instagram", icon: Instagram, href: "https://instagram.com/safelaylar", color: "hover:text-[#E4405F]" },
+  { name: "LinkedIn", icon: Linkedin, href: "https://linkedin.com/company/safelaylar", color: "hover:text-[#0077B5]" },
+  { name: "YouTube", icon: Youtube, href: "https://youtube.com/@safelaylar", color: "hover:text-[#FF0000]" },
+  { name: "GitHub", icon: Github, href: "https://github.com/safelaylar", color: "hover:text-foreground" },
+];
 
 const Footer = () => {
   return (
@@ -15,10 +25,26 @@ const Footer = () => {
                 </div>
                 <span className="text-xl font-bold text-foreground">SafeLaylar</span>
               </div>
-              <p className="text-muted-foreground text-sm max-w-sm leading-relaxed">
+              <p className="text-muted-foreground text-sm max-w-sm leading-relaxed mb-6">
                 AI-powered protection for a safer digital life. Built with privacy in mind, 
                 designed for everyone.
               </p>
+              
+              {/* Social Links */}
+              <div className="flex items-center gap-3">
+                {socialLinks.map((social) => (
+                  <a
+                    key={social.name}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`w-9 h-9 rounded-full bg-background border border-border/50 flex items-center justify-center text-muted-foreground transition-colors ${social.color}`}
+                    aria-label={`Follow us on ${social.name}`}
+                  >
+                    <social.icon className="w-4 h-4" />
+                  </a>
+                ))}
+              </div>
             </div>
             
             {/* Product links */}
@@ -71,9 +97,19 @@ const Footer = () => {
               </ul>
             </div>
           </div>
+
+          {/* Share Section */}
+          <div className="py-6 border-t border-b border-border/50 mb-8">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+              <p className="text-sm text-muted-foreground">
+                Help spread digital safety awareness - share SafeLaylar with others
+              </p>
+              <SocialShare title="SafeLaylar - AI-Powered Digital Safety Protection" />
+            </div>
+          </div>
           
           {/* Bottom */}
-          <div className="pt-8 border-t border-border/50 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-muted-foreground text-sm">
               © 2025 SafeLaylar. All rights reserved.
             </p>

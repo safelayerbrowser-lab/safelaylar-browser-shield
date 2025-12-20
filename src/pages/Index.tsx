@@ -8,6 +8,7 @@ import SafetyChatbot from "@/components/SafetyChatbot";
 import ImpactGallery from "@/components/ImpactGallery";
 import InstallBanner from "@/components/InstallBanner";
 import Testimonials from "@/components/Testimonials";
+import FAQ from "@/components/FAQ";
 
 const Index = () => {
   return (
@@ -16,6 +17,7 @@ const Index = () => {
       <Features />
       <ImpactGallery />
       <Testimonials />
+      <FAQ />
       <InteractiveDemo />
       <HowItWorks />
       <Download />
